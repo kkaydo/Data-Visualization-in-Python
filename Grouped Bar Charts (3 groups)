@@ -1,0 +1,21 @@
+NUM_MEANS     = 5
+NUM_GROUPS    = 3
+bc_means      = [20, 35, 30, 35, 27]
+alberta_means = [25, 32, 34, 20, 25]
+saskatchewan_means = [18, 28, 32, 24, 31]
+
+# This generates indices from 0 to 4 in a format that is accepted for
+# plotting bar charts.
+ind = np.arange(NUM_MEANS)
+print(ind)
+width = 0.25
+plt.bar(ind, bc_means, width, label='BC')
+plt.bar(ind + width, alberta_means, width, label='AB')
+plt.bar(ind + 2*width, saskatchewan_means, width, label='SK')
+
+plt.ylabel('Revenue')
+plt.title('Quarterly Revenue by Province')
+
+plt.xticks(ind + width , ('Q1', 'Q2', 'Q3', 'Q4', 'Q5'))
+plt.legend(loc='best')
+plt.show()
