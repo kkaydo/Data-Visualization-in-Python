@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+
+x = ['Nuclear', 'Hydro', 'Gas', 'Oil', 'Coal', 'Biofuel']
+energy = [5, 6, 15, 22, 24, 8]
+
+plt.bar(x, energy, color='green')
+plt.xlabel("Energy Source")
+plt.ylabel("Energy Output (GJ)")
+plt.title("Energy output from various fuel sources")
+
+# You can specify a rotation for the tick
+# labels in degrees or with keywords.
+# plt.xticks(x, labels, rotation ='vertical')
+
+plt.xticks(x, x) # set x value as label
+plt.show()
